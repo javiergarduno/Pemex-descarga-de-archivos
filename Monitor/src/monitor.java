@@ -48,18 +48,19 @@ public class monitor {
 		        	LogWriter("log.txt","Los archivos " +  newFile + " " + oldFile + " son diferentes");
 		        	
 		        	Calendar calendar = Calendar.getInstance();
-		    		int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH); //cal.add(Calendar.DATE, -1);
+		    		//int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH); //cal.add(Calendar.DATE, -1);
 		    		int month = calendar.get(Calendar.MONTH);
 		    		String monthName = MonthName(month);
 		    		int year = calendar.get(Calendar.YEAR);
 		    		//test
-		    		/*
-		    		calendar.add(Calendar.DATE, -30);
-		    		int tmp = calendar.get(Calendar.DAY_OF_MONTH);
-		    		*/
+		    		
+		    		calendar.add(Calendar.DATE, -1);
+		    		int dayOfMonth_1 = calendar.get(Calendar.DAY_OF_MONTH);
+		    		System.out.println(dayOfMonth_1);
 		    		
 		    		
-		    		String FileName =  "Balance_de_Gas " + (dayOfMonth-1) + monthName + (year-2000) + ".pdf";    	
+		    		
+		    		String FileName =  "Balance_de_Gas " + dayOfMonth_1 + monthName + (year-2000) + ".pdf";    	
 		    	    File newFile2 = new  File(FileName);
 		    	    
 		    	    //Hace una copia del archivo nuevo con la fecha en el nombre
