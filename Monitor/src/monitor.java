@@ -40,11 +40,14 @@ public class monitor {
 	        	
 	            System.out.println(new Date());       
 	            
-	            Download(url, newFile);
-	            SaveFile(newFile,oldFile,BlanceGasFormtat());
+	            if(Download(url, newFile)){
+	            	SaveFile(newFile,oldFile,BlanceGasFormtat());
+	            }
 	            
-	            Download(url, newOperativoCrudo);
-	            SaveFile(newOperativoCrudo, oldOperativoCrudo, OperativoCrudoFormtat());
+	            
+	            if(Download(urlOperativoCrudo, newOperativoCrudo)){	            
+	            	SaveFile(newOperativoCrudo, oldOperativoCrudo, OperativoCrudoFormtat());
+	            }
 	            
 	            
 		        
@@ -53,18 +56,23 @@ public class monitor {
 	        }
 	    } catch (InterruptedException e) {
 	        e.printStackTrace();
+	        System.out.println("Error en la descarga");
 	    }
 		
 	}
 	
-	static void Download(URL source,File fileToSave){
+	static boolean Download(URL source,File fileToSave){
 		try {
             FileUtils.copyURLToFile(source, fileToSave);            
             LogWriter("log.txt","El archivo \"" + fileToSave + "\" se ha descargado");
+            System.out.println("El archivo " + fileToSave + " Se ha descargado");
+            return true;
             
         } 
         catch(IOException e) {
-        	e.printStackTrace();       
+        	e.printStackTrace();
+        	System.out.println("El archivo " + fileToSave + " No se ha descargado");
+        	return false;
         }		
 	}
 		
@@ -131,7 +139,7 @@ public class monitor {
 		//calendar.add(Calendar.DATE, -1);
 		int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 		
-		return "Resumen_operativoCrudo " + dayOfMonth + monthName + (year-2000) + ".xlsx";
+		return "Resumen Operativo Crudo " + dayOfMonth + monthName.toLowerCase() + (year-2000) + ".xlsx";
 	}
 
 	static void SaveFile(File newFile, File oldFile, String fileName) throws IOException, InterruptedException{

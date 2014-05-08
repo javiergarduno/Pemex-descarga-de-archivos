@@ -17,7 +17,7 @@ public class Area extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         logArea = new JTextArea(5, 5);
-        logArea.append("Este programa descarga el archivo de balance de gas \nademas de guardarlo con el nombre en el formato ya existente. \nLa descarga solo se realiza cuando ésta ventana se mantiene abierta, ");
+        logArea.append("Este programa descarga el archivo de balance de gas y el Resumen Operativo Crudo \nademas de guardarlos con el nombre en el formato ya existente. \nLa descarga solo se realiza cuando ésta ventana se mantiene abierta, ");
         logArea.setEditable(true);
         
         userArea = new JTextArea(5, 5);
