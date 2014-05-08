@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import org.apache.commons.io.FileUtils;
@@ -29,7 +30,9 @@ public class monitor {
         
         URL url = new URL("http://intranet.pemex.com/os/pep/sdc/go/Reportes%20Diarios%20Histricos/Balance_de_Gas.pdf");
 		File newFile = new File("Balance_de_Gas.pdf");    
-		File oldFile = new  File ("Balance_de_Gas_anterior.pdf");	
+		File oldFile = new  File ("Balance_de_Gas_anterior.pdf");
+		
+		
 		
 		URL urlOperativoCrudo = new URL("http://intranet.pemex.com/os/pep/sdc/go/Reportes%20Diarios%20Histricos/Resumen_Operativo_Crudo.xlsx");
 		File newOperativoCrudo = new File("Resumen_Operativo_Crudo.xlsx");
@@ -45,7 +48,7 @@ public class monitor {
 	            }
 	            
 	            
-	            if(Download(urlOperativoCrudo, newOperativoCrudo)){	            
+	            if(Download(urlOperativoCrudo, newOperativoCrudo)){	            	
 	            	SaveFile(newOperativoCrudo, oldOperativoCrudo, OperativoCrudoFormtat());
 	            }
 	            
