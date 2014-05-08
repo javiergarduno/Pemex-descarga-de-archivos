@@ -35,7 +35,7 @@ public class HideToSystemTray extends JFrame{
 			tray = SystemTray.getSystemTray();
 			
 
-			Image image = Toolkit.getDefaultToolkit().getImage("pmx.png");
+			Image image = Toolkit.getDefaultToolkit().getImage("files/pemex_icon.png");
 			
 
 			ActionListener exitListener = new ActionListener() {
@@ -47,11 +47,11 @@ public class HideToSystemTray extends JFrame{
 
 			PopupMenu popup = new PopupMenu();
 			
-			MenuItem defaultItem = new MenuItem("Exit");
+			MenuItem defaultItem = new MenuItem("Salir");
 			defaultItem.addActionListener(exitListener);
 			popup.add(defaultItem);
 
-			defaultItem = new MenuItem("Open");
+			defaultItem = new MenuItem("Abrir");
 			defaultItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					setVisible(true);
@@ -103,7 +103,7 @@ public class HideToSystemTray extends JFrame{
 		});
 		
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage("pmx.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("files/pemex_icon.png"));
 
 		setVisible(true);
 		setSize(300, 200);

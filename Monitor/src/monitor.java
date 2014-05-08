@@ -17,13 +17,16 @@ public class monitor {
 
 	public static void main(String[] args) throws IOException {
 		
+		/*
 		EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
             	// Area area = new Area();
                 // area.setText();
             }
-        });
+        });*/
+		
+		new HideToSystemTray();
 		
 		LogWriter("log.txt", "Inicio de Ejecución");
 		area = new Area();
