@@ -25,7 +25,8 @@ public class monitor {
                 // area.setText();
             }
         });*/
-		
+        System.out.println("Esta es una nueva rama");       
+
 		new HideToSystemTray();
 		
 		LogWriter("log.txt", "Inicio de Ejecución");
