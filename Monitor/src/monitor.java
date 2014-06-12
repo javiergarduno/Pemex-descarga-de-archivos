@@ -26,18 +26,19 @@ public class monitor {
             }
         });*/
 		
-		new HideToSystemTray();
+		//new HideToSystemTray();
 		
 		LogWriter("log.txt", "Inicio de Ejecución");
 		area = new Area();
-        
+        /*
         URL url = new URL("http://intranet.pemex.com/os/pep/sdc/go/Reportes%20Diarios%20Histricos/Balance_de_Gas.pdf");
 		File newFile = new File("Balance_de_Gas.pdf");    
 		File oldFile = new  File ("Balance_de_Gas_anterior.pdf");
-		
+		*/
 		
 		
 		URL urlOperativoCrudo = new URL("http://intranet.pemex.com/os/pep/sdc/go/Reportes%20Diarios%20Histricos/Resumen_Operativo_Crudo.xlsx");
+		
 		File newOperativoCrudo = new File("Resumen_Operativo_Crudo.xlsx");
 		File oldOperativoCrudo = new File("Resumen_Operativo_Crudo_anterior.xlsx");
 	
@@ -45,11 +46,12 @@ public class monitor {
 	        while (true) {
 	        	
 	            System.out.println(new Date());       
-	            
+	            /*
 	            if(Download(url, newFile)){
 	            	SaveFile(newFile,oldFile,BlanceGasFormtat());
+	            	
 	            }
-	            
+	            */
 	            
 	            if(Download(urlOperativoCrudo, newOperativoCrudo)){	            	
 	            	SaveFile(newOperativoCrudo, oldOperativoCrudo, OperativoCrudoFormtat());
